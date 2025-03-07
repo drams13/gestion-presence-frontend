@@ -1,0 +1,7 @@
+{
+  "name": "idt_presence",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

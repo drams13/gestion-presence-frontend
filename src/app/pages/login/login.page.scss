@@ -1,0 +1,101 @@
+.login-container {
+  --background: #f5f5f5;
+  position: relative;
+  height: 100%;
+}
+
+.login-box {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  
+  /* Positionnement absolu au centre */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .logo {
+    max-width: 200px;
+    height: auto;
+  }
+  .login-title {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: normal;
+  }
+  .form-container {
+    margin-top: 20px;
+  }
+  .custom-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --background: transparent;
+    margin-bottom: 15px;
+  }
+  .custom-input {
+    --background: #f9f9f9;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    --border-radius: 4px;
+    --border-color: #ddd;
+    margin-top: 5px;
+  }
+  .remember-me-item {
+    --background: transparent;
+    --border-color: transparent;
+    margin-bottom: 20px;
+  }
+  .sign-in-button {
+    --background: #27ae60;
+    --background-activated: #219653;
+    --background-hover: #219653;
+    --border-radius: 4px;
+    --color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    height: 48px;
+  }
+  // Pour rendre l'interface responsive
+  @media (max-width: 480px) {
+    .login-box {
+      width: 95%;
+      padding: 20px;
+    }
+    .logo {
+      max-width: 150px;
+    }
+    .login-title {
+      font-size: 16px;
+    }
+  }
+// Ajoutez ces styles à la fin de votre fichier SCSS existant
+
+.additional-options {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forgot-password {
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  
+  &:hover {
+    text-decoration: underline;
+    color: #27ae60;
+  }
+}
