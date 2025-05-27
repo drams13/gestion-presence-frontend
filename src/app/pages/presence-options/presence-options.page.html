@@ -1,0 +1,66 @@
+<!-- src/app/pages/presence-options/presence-options.page.html -->
+<ion-header class="custom-header">
+  <ion-toolbar>
+    <ion-title>Options de Présence</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" class="logout-button-ionic">
+        Déconnexion
+        <!-- Optionnel: <ion-icon slot="end" name="log-out-outline" color="danger"></ion-icon> -->
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-content">
+  <div class="main-container">
+    <div class="options-card">
+
+
+      <!-- src/app/pages/presence-options/presence-options.page.html -->
+
+<ion-button expand="block" class="custom-option-button primary-gradient" (click)="goToQrCode()">
+  <span class="button-icon-emoji" slot="start">📱</span>
+  Générer mon QR Code
+</ion-button>
+
+<ion-button expand="block" class="custom-option-button secondary-gradient" (click)="clockInDirect()">
+  <span class="button-icon-emoji" slot="start">⏱️</span>
+  Pointer ma présence (Direct)
+</ion-button>
+
+      <!-- <ion-button expand="block" class="custom-option-button primary-gradient" (click)="goToQrCode()">
+        <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+        Générer mon QR Code
+      </ion-button>
+
+      <ion-button expand="block" class="custom-option-button secondary-gradient" (click)="clockInDirect()">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        Pointer ma présence (Direct)
+      </ion-button> -->
+
+      <!-- Indicateur de chargement (utilisant les variables Angular) -->
+      <div *ngIf="isLoading" class="loading-indicator-ionic ion-text-center">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Traitement en cours...</p>
+      </div>
+
+      <!-- Message de statut (utilisant les variables Angular) -->
+      <div *ngIf="statusMessage"
+           [ngClass]="{'success-message-ionic': isSuccess, 'error-message-ionic': !isSuccess}"
+           class="status-message-container ion-text-center">
+        {{ statusMessage }}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Icône flottante (similaire à votre footer-icon) -->
+  <!-- Pour l'instant, commenté car sa fonction "openQRModal" n'est pas définie dans le .ts -->
+  <!--
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="footer-fab-button" (click)="openQRModal()">
+      <ion-icon name="qr-code"></ion-icon> <!- Remplacer par votre icône réelle si besoin ->
+    </ion-fab-button>
+  </ion-fab>
+  -->
+</ion-content>

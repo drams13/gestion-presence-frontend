@@ -1,0 +1,171 @@
+// src/app/pages/presence-options/presence-options.page.scss
+
+// Variables de couleur (vous pouvez les définir dans theme/variables.scss pour une utilisation globale)
+:host {
+    --custom-bg-gradient-start: #0f2027;
+    --custom-bg-gradient-mid: #203a43;
+    --custom-bg-gradient-end: #2c5364;
+    --custom-header-bg: #1e1e2f;
+    --custom-header-title-color: #00c9ff;
+    --custom-logout-color: #ff4d4d;
+    --custom-card-bg: rgba(0, 0, 0, 0.6);
+    --custom-button-primary-start: #00c9ff;
+    --custom-button-primary-end: #92fe9d;
+    --custom-button-secondary-start: #ffd700;
+    --custom-button-secondary-end: #ffcc99;
+    --custom-button-text-color: #000;
+    --custom-text-color: #fff;
+    --custom-spinner-color: #fff; // Couleur pour le ion-spinner
+  
+    --custom-status-success-bg: #d4edda;
+    --custom-status-success-text: #155724;
+    --custom-status-error-bg: #f8d7da;
+    --custom-status-error-text: #721c24;
+  }
+  
+  // Header
+  ion-header.custom-header {
+    ion-toolbar {
+      --background: var(--custom-header-bg);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    ion-title {
+      color: var(--custom-header-title-color);
+      font-size: 20px; // Ajustez si besoin
+    }
+  }
+  
+  .logout-button-ionic {
+    --color: var(--custom-logout-color); // Couleur du texte
+    font-size: 16px; // Ajustez la taille du texte
+    --padding-start: 8px;
+    --padding-end: 16px;
+    // Si vous voulez un look plus proche de votre bouton HTML:
+    // --background: transparent;
+    // --box-shadow: none;
+  }
+  
+  
+  // Contenu principal
+  ion-content.custom-content {
+    --background: linear-gradient(to right, var(--custom-bg-gradient-start), var(--custom-bg-gradient-mid), var(--custom-bg-gradient-end));
+    --color: var(--custom-text-color); // Couleur de texte par défaut pour le contenu
+  }
+  
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; // Permet au contenu d'être centré verticalement
+    padding: 20px;
+  }
+  
+  .options-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--custom-card-bg);
+    padding: 30px 20px; // Ajusté le padding un peu
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  // Styles pour les boutons d'options
+  .custom-option-button {
+    --border-radius: 10px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px 0; // Un peu moins de marge que 15px
+    width: 100%; // expand="block" s'en charge déjà, mais pour être sûr
+    --color: var(--custom-button-text-color); // Couleur du texte à l'intérieur du bouton
+    text-transform: none; // Empêche la capitalisation par défaut des boutons Ionic
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    .button-icon-emoji {
+        margin-right: 8px; // Espace entre l'emoji et le texte
+        font-size: 1.2em; // Ajustez la taille de l'emoji si nécessaire
+        // line-height: 1; // Peut aider à l'alignement vertical
+      }
+  
+    ion-icon {
+      margin-right: 10px; // Espace entre l'icône et le texte
+    }
+  
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+  
+  .primary-gradient {
+    --background: linear-gradient(to right, var(--custom-button-primary-start), var(--custom-button-primary-end));
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 201, 255, 0.4); // Utilise la couleur principale du gradient pour l'ombre
+    }
+  }
+  
+  .secondary-gradient {
+    --background: linear-gradient(to right, var(--custom-button-secondary-start), var(--custom-button-secondary-end));
+    &:hover {
+      box-shadow: 0 8px 16px rgba(255, 215, 0, 0.4); // Utilise la couleur principale du gradient pour l'ombre
+    }
+  }
+  
+  
+  // Indicateur de chargement Ionic
+  .loading-indicator-ionic {
+    margin-top: 20px;
+    p {
+      margin-top: 8px;
+      color: var(--custom-text-color);
+    }
+    ion-spinner {
+      --color: var(--custom-spinner-color); // Applique la couleur au spinner
+    }
+  }
+  
+  // Messages de statut Ionic
+  .status-message-container {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 5px;
+    width: 100%; // Prend toute la largeur de la carte
+    font-weight: bold;
+  }
+  
+  .success-message-ionic {
+    background-color: var(--custom-status-success-bg);
+    color: var(--custom-status-success-text);
+  }
+  
+  .error-message-ionic {
+    background-color: var(--custom-status-error-bg);
+    color: var(--custom-status-error-text);
+  }
+  
+  
+  // Bouton flottant (FAB)
+  // Décommentez et stylisez si vous l'utilisez
+  /*
+  ion-fab-button.footer-fab-button {
+    --background: #fff; // Couleur de fond blanche comme votre exemple
+    --background-activated: #e0e0e0;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --color: #333; // Couleur de l'icône
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      // L'animation de rotation est plus complexe avec Ionic FAB,
+      // vous pourriez avoir besoin de JS ou d'animations CSS plus avancées.
+      // Pour un simple scale :
+      transform: scale(1.1);
+    }
+  
+    // Si vous utilisez une image personnalisée à l'intérieur comme dans votre exemple HTML
+    // il faudra la styliser spécifiquement. Ionic FAB est plus pensé pour les ion-icon.
+  }
+  */

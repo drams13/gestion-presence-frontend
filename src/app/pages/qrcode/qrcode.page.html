@@ -1,0 +1,27 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-title>Mon QR Code</ion-title>  
+    <ion-buttons slot="end">  
+      <ion-button (click)="logout()">  
+        <ion-icon name="log-out-outline"></ion-icon>  
+      </ion-button>  
+    </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>  
+
+<ion-content class="ion-padding">  
+  <div class="qrcode-container">  
+    <h2>Bienvenue, {{userEmail}}</h2>  
+    <p>Voici votre code QR pour l'enregistrement de présence</p>  
+
+    <div class="qrcode-wrapper">  
+      <qrcode
+        [value]="qrCodeData"
+        [width]="250"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>  
+    </div>  
+
+    <p class="instructions">Présentez ce code QR au scanner pour enregistrer votre présence</p>  
+  </div>  
+</ion-content>

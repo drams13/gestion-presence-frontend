@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
+   <!-- Ajout de la politique de sécurité du contenu -->
+   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://www.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' http://localhost:8000 ws: wss:;">
+   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://www.gstatic.com; font-src 'self' data: https://fonts.gstatic.com;"> -->
   <title>Ionic App</title>
 
   <base href="/" />
